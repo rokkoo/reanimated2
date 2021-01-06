@@ -5,7 +5,7 @@ import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
 } from "react-native-reanimated";
-import Item, { ITEM_MAX_SIZE } from "./components/Item";
+import Item, { ITEM_MAX_HEIGHT } from "./components/Item";
 import { items } from "./Model";
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
       <Animated.ScrollView
         onScroll={onScroll}
         scrollEventThrottle={16}
-        contentContainerStyle={{ height: (items.length + 1) * ITEM_MAX_SIZE }}
+        contentContainerStyle={{ height: (items.length + 1) * ITEM_MAX_HEIGHT }}
         decelerationRate="fast"
       >
         {items.map((item, index) => {
